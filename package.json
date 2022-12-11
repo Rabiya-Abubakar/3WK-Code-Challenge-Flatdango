@@ -1,0 +1,19 @@
+{
+  "name": "wk3-code-challenge",
+  "version": "1.0.0",
+  "description": "movie tickets purchase from the theater",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "json-server --watch db.json"
+  },
+  "keywords": [
+    "javascript",
+    "html",
+    "css",
+    "movie",
+    "tickets"
+  ],
+  "author": "Ian Ayub",
+  "license": "ISC"
+}
