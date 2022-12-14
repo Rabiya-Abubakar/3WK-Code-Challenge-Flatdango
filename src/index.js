@@ -23,6 +23,7 @@ function renderFilms(film) {
 
   availableTickets = film.capacity - film.tickets_sold;
   let div = document.createElement("div");
+  div.id = "film_item";
   div.classList.add("flex", "gap-3");
 
   div.innerHTML = `
@@ -83,8 +84,9 @@ function renderFilms(film) {
     available.textContent = availableTickets;
     duration.textContent = film.runtime;
 
-    let ticketBtn = document.createElement("button");
-    ticketBtn.classList.add(
+    let ticketBtnDet = document.createElement("button");
+    ticketBtnDet.id = "ticketBtnDet";
+    ticketBtnDet.classList.add(
       "bg-clifford",
       "px-2",
       "py-0.5",
@@ -92,10 +94,10 @@ function renderFilms(film) {
       "rounded",
       "text-white"
     );
-    ticketBtn.textContent = "Buy Ticket";
-    document.querySelector("#film_info").appendChild(ticketBtn);
+    ticketBtnDet.textContent = "Buy Ticket";
+    document.querySelector("#ticket").appendChild(ticketBtnDet);
 
-    ticketBtn.addEventListener("click", buyTicket);
+    ticketBtnDet.addEventListener("click", buyTicket);
 
     // number of available tickets counter decrement during onclick of buy ticket button
     function buyTicket(e) {
@@ -107,6 +109,10 @@ function renderFilms(film) {
         available.textContent = "Sold Out!";
         e.target.remove();
       }
+    }
+
+    if (document.querySelector("#ticket").children.length > 1) {
+      document.querySelector("#ticket").children[0].remove();
     }
   }
 }
@@ -140,7 +146,7 @@ function renderOneFilm(film) {
     "text-white"
   );
   ticketBtn.textContent = "Buy Ticket";
-  document.querySelector("#film_info").appendChild(ticketBtn);
+  document.querySelector("#ticket").appendChild(ticketBtn);
 
   ticketBtn.addEventListener("click", buyTicket);
 
