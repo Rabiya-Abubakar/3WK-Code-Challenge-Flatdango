@@ -2,16 +2,19 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchFilms();
 });
 
+const dataUrl =
+  "https://ayub-ian.github.io/WK3-Code-Challenge-Flatdango/db.json";
+
 //Fetch all films
 function fetchFilms() {
-  fetch("http://localhost:3000/films")
+  fetch(dataUrl)
     .then((res) => res.json())
     .then((data) => {
       // render the first element of films array once document loaded
-      renderOneFilm(data[0]);
+      renderOneFilm(data.films[0]);
 
       // display list of all available films on the page load
-      data.map((film) => renderFilms(film));
+      data.films.map((film) => renderFilms(film));
     });
 }
 
