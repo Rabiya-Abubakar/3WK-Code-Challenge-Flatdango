@@ -36,6 +36,12 @@ In order for you to use the content on this repo ensure you have the following:
 
 ## Deployment
 
+### Alternative one
+
+Website can be accessed live at [Flatdango website](https://ayub-ian.github.io/WK3-Code-Challenge-Flatdango/)
+
+### Alternative two
+
 - Run the ``index.html`` file on your default browser.
 - Open Chrome browser
 - Choose ``Open file...``
